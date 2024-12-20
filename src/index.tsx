@@ -15,9 +15,7 @@ app.use(logger());
 app.get("/", async (c) => {
   return c.html(
     <Layout>
-      <Books>
-        <Book title="The Great Gatsby" author="F. Scott Fitzgerald" />
-      </Books>
+      <a href="/books">Books</a>
     </Layout>
   );
 });
