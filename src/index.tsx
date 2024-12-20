@@ -54,6 +54,16 @@ app.get("/books/:id", async (c) => {
 
 app.post("/books", async (c) => {
   const book = await c.req.json();
+
+  // we should actually use Zod for this; everybody loves Zod; Hono has a Zod plugin
+  if (!book.title || !book.author) {
+    return c.json({ error: "Invalid request" }, 400);
+  }
+
+  if (book.title && book.title.length < 2) {
+    return c.json({ error: "Title must be at least 2 characters" }, 400);
+  }
+
   const newBook = await db.insert(booksTable).values(book).returning();
   return c.json(newBook);
 });
