@@ -1,0 +1,22 @@
+{
+  "name": "hono-drizzle-pg-634",
+  "scripts": {
+    "dev": "bun run --hot src/index.tsx",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate",
+    "studio": "drizzle-kit studio"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "dotenv-expand": "^12.0.1",
+    "drizzle-orm": "^0.38.2",
+    "hono": "^4.6.14",
+    "pg": "^8.13.1"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/pg": "^8.11.10",
+    "drizzle-kit": "^0.30.1",
+    "tsx": "^4.19.2"
+  }
+}
